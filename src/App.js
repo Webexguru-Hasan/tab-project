@@ -1,20 +1,32 @@
-
-import { useState } from 'react';
 import './App.css';
-import Loading from './Components/Loading';
-import Tour from './Components/Tour';
 import Tours from './Components/Tours';
-const url = 'https://course-api.com/react-tours-project'
+import { GetData } from './Components/TourData';
+import { useEffect, useState } from 'react';
+import useFetch from './CustomHooks/useFetch';
+import Loading from './Components/Loading';
+
+
+
 
 
 
 function App() {
-  
-  return (
+  // const [data, setData] = useState([])
+
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const response = await GetData();
+  //     setData(response)
+  //   }
+  //   fetchData();
+  // }, []);
+
+ const {data, loading, removeTour} = useFetch("https://course-api.com/react-tours-project")
+ 
+ return (
    <>
-   <Loading />
-   <Tours />
-   <Tour />
+   
+   {loading ? <Tours datas={data} remove={removeTour} /> : <Loading /> }
    
    </>
   );
