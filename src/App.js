@@ -1,5 +1,4 @@
 import "./App.css";
-import Food from "./Components/Food";
 
 function App() {
   return (
@@ -10,7 +9,6 @@ function App() {
             <h2>Our Menu</h2>
             <div className="underline"></div>
           </div>
-          <Food />
         </section>
       </main>
     </>
