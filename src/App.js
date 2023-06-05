@@ -1,17 +1,11 @@
 import "./App.css";
+import Tabs from "./Components/Tabs";
 
 function App() {
   return (
-    <>
-      <main>
-        <section className="menu section">
-          <div className="title">
-            <h2>Our Menu</h2>
-            <div className="underline"></div>
-          </div>
-        </section>
-      </main>
-    </>
+    <div>
+      <Tabs />
+    </div>
   );
 }
 
