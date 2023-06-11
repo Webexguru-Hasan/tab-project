@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaAngleDoubleRight } from "react-icons/fa";
+import Loading from "./Loading";
 const url = "https://course-api.com/react-tabs-project";
 
 const Tabs = () => {
@@ -25,6 +26,14 @@ const Tabs = () => {
     }
     getDataofTabs();
   }, []);
+
+  if (loading) {
+    return (
+      <section className="section loading">
+        <Loading />
+      </section>
+    );
+  }
 
   const { company, dates, duties, title } = jobs[value];
 
